@@ -4,10 +4,148 @@
   box-sizing: border-box;
 }
 
+:root{
+  --primary: #39322B;
+  --title: #27211b;
+  --background: #ECE7D6;
+  --button: #33A7CE;
+  --text-button: #001a22;
+  --white: #ffffff;
+  --hover-links: #86827d;
+  --active: #E7B44B;
+}
+
 body{
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  background: #ffffff;
+  background: var(--background);
   font-weight: 300;
+  overflow-y: hidden;
 }
 
+img{
+  max-width: 100%;
+  display: block;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.header-bg{
+  height: 60px;
+  background: var(--title);
+}
+
+
+.header{
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu a{
+  color: var(--white);
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+.menu a:hover{
+  color: var(--hover-links);
+}
+
+.menu a.active{
+  color: var(--active);
+}
+
+.logo{
+  max-width: 300px;
+  height: 30px;
+}
+
+.main{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  padding: 0 20px;
+}
+
+.main h1{
+  font-size: 3rem;
+  line-height: 1.1;
+  color: var(--title);
+  margin-bottom: 30px;
+}
+
+.button{
+  padding: 15px 30px;
+  width: 200px;
+  background: var(--button);
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover{
+  color: var(--white);
+  background: var(--title);
+}
+
+@media(max-width: 1040px){
+  .menu{
+    flex-wrap: wrap;
+  }
+
+  .main{
+    gap: 20px;
+  }
+}
+
+@media(max-width: 700px){
+  .header-bg{
+    padding-top: 10px;
+    height: 120px;
+  }
+
+  .header{
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .main{
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+  }
+
+  .main .content{
+    text-align: center;
+  }
+
+  .main h1{
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .main img{
+    width: 300px;
+  }
+}
